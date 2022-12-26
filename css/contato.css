@@ -1,0 +1,41 @@
+.contato .imagem {
+  grid-column: 2;
+}
+
+.contatos li a {
+  display: block;
+  margin-bottom: 1rem;
+  color: #222;
+  font-family: Helvetica, Arial;
+}
+
+.contatos li a::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  background: #fb5;
+}
+
+.footer p {
+  background: #fb5;
+  padding: 20px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  grid-column: 2 / -1;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .footer p {
+    margin-bottom: 0;
+    grid-column: 1 / -1;
+  }
+
+  .contatos,
+  .contato .imagem {
+    grid-column: 1 / 4;
+  }
+}

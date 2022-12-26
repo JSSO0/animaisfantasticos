@@ -1,0 +1,71 @@
+
+.faq dl {
+  grid-column: 2/-1;
+}
+
+.faq dt {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #e54;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq dt::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  background: #fb5;
+}
+
+.faq dd {
+  font-family: Helvetica, Arial;
+  margin-left: 30px;
+}
+
+@media (max-width: 700px) {
+  .faq dl {
+    grid-column: 1/-1;
+  }
+
+  .faq dt:first-child {
+    margin-top: 0;
+  }
+}
+
+.js .js-acordion dd {
+  display: none;
+  transition: 0.3s;
+}
+
+.js-acordion dt::after {
+  content: "⮟";
+}
+
+.js-acordion dt.ativo::after {
+  content: "⮝";
+}
+
+.js-acordion dd.ativo {
+  display: block;
+  animation: sliderDown 0.5s forwards;
+}
+
+@keyframes sliderDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    max-height: 200px;
+    opacity: 1;
+  }
+}
